@@ -26,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        learnmoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this , Home_NavigationActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
