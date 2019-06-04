@@ -4,33 +4,26 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Home"
-            />
-        <item
-            android:id="@+id/nav_bookappointment"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Book an appointment" />
-        <item
-            android:id="@+id/nav_labtest"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Book a labtest" />
+
+
         <item
             android:id="@+id/nav_delivery"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_airport_shuttle_black_24dp"
             android:title="Home Delivery" />
         <item
             android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_person_outline_black_24dp"
             android:title="My Profile" />
         <item
             android:id="@+id/nav_myappointment"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_event_available_black_24dp"
             android:title="My Appointments" />
+        <item
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/ic_reorder_black_24dp"
+            android:title="My Orders" />
     </group>
-    <item android:title="Communicate">
+    <item android:title="Other">
         <menu>
             <item
                 android:id="@+id/nav_refer"
@@ -38,11 +31,11 @@
                 android:title="Refer to Friend" />
             <item
                 android:id="@+id/nav_contact"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_contact_phone_black_24dp"
                 android:title="Contact Us" />
             <item
-                android:id="@+id/sign_out"
-                android:icon="@drawable/ic_menu_send"
+                android:id="@+id/nav_sign_out"
+                android:icon="@drawable/ic_exit_to_app_black_24dp"
                 android:title="Sign Out" />
         </menu>
     </item>
