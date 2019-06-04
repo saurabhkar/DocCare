@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Home"
+            />
+        <item
+            android:id="@+id/nav_bookappointment"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Book an appointment" />
+        <item
+            android:id="@+id/nav_labtest"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Book a labtest" />
+        <item
+            android:id="@+id/nav_delivery"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Home Delivery" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="My Profile" />
+        <item
+            android:id="@+id/nav_myappointment"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="My Appointments" />
+    </group>
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_refer"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Refer to Friend" />
+            <item
+                android:id="@+id/nav_contact"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Contact Us" />
+            <item
+                android:id="@+id/sign_out"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Sign Out" />
+        </menu>
+    </item>
+
+</menu>
