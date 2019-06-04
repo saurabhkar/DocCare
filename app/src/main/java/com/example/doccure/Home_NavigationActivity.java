@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class Home_NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -80,17 +81,24 @@ public class Home_NavigationActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_bookappointment) {
 
-        } else if (id == R.id.nav_labtest) {
-
-        } else if (id == R.id.nav_delivery) {
+        if (id == R.id.nav_delivery) {
 
         } else if (id == R.id.nav_profile) {
 
         } else if (id == R.id.nav_myappointment) {
+
+        }
+        else if (id == R.id.nav_orders) {
+
+        }
+        else if (id == R.id.nav_refer) {
+
+        }
+        else if (id == R.id.nav_contact) {
+
+        }
+        else if (id == R.id.nav_sign_out) {
 
         }
 
