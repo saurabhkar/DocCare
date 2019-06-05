@@ -9,19 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MedicineActivity"></activity>
+
         <activity
             android:name=".Home_NavigationActivity"
             android:label="@string/title_activity_home__navigation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".JoinActivity" />
 
-        
-        <activity android:name=".RecyclerViewAdapter"/>
-        <activity android:name=".SpecialisationActivity"/> 
-     
 
+        <activity android:name=".RecyclerViewAdapter"/>
+        <activity android:name=".SpecialisationActivity"/>
+
+        <activity android:name=".MedicineActivity"/>
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
