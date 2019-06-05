@@ -20,9 +20,9 @@
         <activity android:name=".RecyclerViewAdapter"/>
         <activity android:name=".SpecialisationActivity"/>
 
+        <activity android:name=".MedicineActivity"/>
+        <activity android:name=".MainActivity">
 
-        <activity android:name=".MainActivity"/>
-            <activity android:name=".MedicineActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
