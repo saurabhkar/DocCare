@@ -26,60 +26,10 @@ android:orientation="vertical">
     android:layout_height="match_parent"
     android:background="@drawable/doc2"
     android:orientation="vertical">
-    <EditText
-        android:id="@+id/inputname"
-        android:drawablePadding="10dp"
-        android:layout_margin="10dp"
-        android:drawableLeft="@drawable/ic_person_outline_black_24dp"
-        android:layout_width="350dp"
-        android:textColor="#000000"
-        android:textColorHint="#696969"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="Name"
-        tools:text="@tools:sample/full_names" />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-    <EditText
-        android:id="@+id/inputdate"
-        android:drawablePadding="10dp"
-        android:layout_margin="10dp"
-        android:drawableLeft="@drawable/ic_date_range_black_24dp"
-        android:layout_width="175dp"
-        android:textColor="#000000"
-        android:textColorHint="#696969"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:hint="D.O.B"
-        tools:text="@tools:sample/date/ddmmyy" />
 
-        <EditText
-            android:id="@+id/inputcountry"
-            android:drawablePadding="10dp"
-            android:layout_margin="10dp"
-            android:layout_marginStart="175dp"
-            android:drawableLeft="@drawable/ic_my_location_black_24dp"
-            android:layout_width="175dp"
-            android:textColor="#000000"
-            android:textColorHint="#696969"
-            android:layout_height="wrap_content"
-            android:hint="Country"
-            tools:text="@tools:sample/cities" />
 
-    </LinearLayout>
-    <EditText
-        android:id="@+id/inputphone"
-        android:drawablePadding="10dp"
-        android:layout_margin="10dp"
-        android:drawableLeft="@drawable/ic_phone_black_24dp"
-        android:layout_width="350dp"
-        android:textColor="#000000"
-        android:textColorHint="#696969"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:hint="Phone Number"/>
+
+
 
     <EditText
         android:id="@+id/inputemail"
@@ -93,16 +43,7 @@ android:orientation="vertical">
         android:inputType="textEmailAddress"
         android:hint="Email ID"/>
 
-    <EditText
-        android:id="@+id/inputaddress"
-        android:drawablePadding="10dp"
-        android:layout_margin="10dp"
-        android:drawableLeft="@drawable/ic_place_black_24dp"
-        android:layout_width="350dp"
-        android:textColor="#000000"
-        android:textColorHint="#696969"
-        android:layout_height="wrap_content"
-        android:hint="Address"/>
+
 
     <EditText
         android:id="@+id/inputpassword"
@@ -126,4 +67,11 @@ android:orientation="vertical">
         android:textColor="#fff"/>
 
 </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone" />
 </LinearLayout>

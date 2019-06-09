@@ -1,87 +1,92 @@
 package com.example.doccure;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+import static android.view.View.*;
 
 public class JoinActivity extends AppCompatActivity {
     private Button Joinnowbutton;
-    private EditText InputName, InputPhoneNumber, InputPassword , Inputdob,InputAddress,InputEmail,InputCountry;
-    private ProgressDialog loadingBar;
-
+    private EditText  InputPassword , InputEmail;
+    private ProgressBar progressBar;
+    private FirebaseAuth auth;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.joinnow);
-
+        auth = FirebaseAuth.getInstance();
         Joinnowbutton =(Button) findViewById(R.id.joinnowbtn);
-        InputName =(EditText) findViewById(R.id.inputname);
-        InputPhoneNumber =(EditText) findViewById(R.id.inputphone);
         InputPassword =(EditText) findViewById(R.id.inputpassword);
-        Inputdob =(EditText) findViewById(R.id.inputdate);
-        InputAddress =(EditText) findViewById(R.id.inputaddress);
         InputEmail =(EditText) findViewById(R.id.inputemail);
-        InputCountry =(EditText) findViewById(R.id.inputcountry);
-        loadingBar = new ProgressDialog(this);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-        Joinnowbutton.setOnClickListener(new View.OnClickListener() {
+
+        Joinnowbutton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                JoinNow();
+
+                String email = InputEmail.getText().toString().trim();
+                String password = InputPassword.getText().toString().trim();
+
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                 if (TextUtils.isEmpty(password)) {
+                    Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (password.length() < 6) {
+                    Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
+                progressBar.setVisibility(VISIBLE);
+                //create user
+                auth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(JoinActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                Toast.makeText(JoinActivity.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                                progressBar.setVisibility(GONE);
+                                // If sign in fails, display a message to the user. If sign in succeeds
+                                // the auth state listener will be notified and logic to handle the
+                                // signed in user can be handled in the listener.
+                                if (!task.isSuccessful()) {
+                                    Toast.makeText(JoinActivity.this, "Authentication failed." + task.getException(),
+                                            Toast.LENGTH_SHORT).show();
+                                } else {
+                                    startActivity(new Intent(JoinActivity.this, MainActivity.class));
+                                    finish();
+                                }
+                            }
+                        });
+
             }
         });
-
     }
 
-    private void JoinNow() {
-        String name= InputName.getText().toString();
-        String phone=InputPhoneNumber.getText().toString();;
-        String password=InputPassword.getText().toString();;
-        String address=InputAddress.getText().toString();;
-        String dateofbirth=Inputdob.getText().toString();;
-        String email=InputEmail.getText().toString();;
-        String country=InputCountry.getText().toString();;
-
-        if(TextUtils.isEmpty(name))
-        {
-            Toast.makeText(this, "Please write your name", Toast.LENGTH_SHORT).show();
-        }
-        else if (TextUtils.isEmpty(phone))
-        {
-            Toast.makeText(this, "Provide your phone number", Toast.LENGTH_SHORT).show();
-        }
-        else if(TextUtils.isEmpty(password)){
-            Toast.makeText(this, "Provide a Strong Password", Toast.LENGTH_SHORT).show();
-        }
-        else if(TextUtils.isEmpty(address))
-        {
-            Toast.makeText(this, "Please write your address", Toast.LENGTH_SHORT).show();
-        }
-        else if (TextUtils.isEmpty(dateofbirth))
-        {
-            Toast.makeText(this, "Date of Birth cannot be left blank", Toast.LENGTH_SHORT).show();
-        }
-        else if(TextUtils.isEmpty(country)){
-            Toast.makeText(this, "Specify a country", Toast.LENGTH_SHORT).show();
-        }
-        else
-        {
-            loadingBar.setTitle("Create Account");
-            loadingBar.setMessage("Please wait  ! We are validating ");
-            loadingBar.setCanceledOnTouchOutside(false);
-            loadingBar.show();
-            ValidatephoneNumber(name,phone,password,address,dateofbirth,email,country);
-        }
-
-
-    }
-
-    private void ValidatephoneNumber(String name1, String phone, String password, String address, String dob, String email, String country) {
+    @Override
+    protected void onResume() {
+        super.onResume();
+        progressBar.setVisibility(GONE);
     }
 }
+

@@ -10,15 +10,34 @@
     android:orientation="vertical"
     android:background="@android:color/white">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="top|center"
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_vertical_margin">
+
+
     <ImageButton
         android:id="@+id/doc_image_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="150dp"
+
+        android:layout_marginStart="30dp"
         android:background="@drawable/doc_image_button_background"
 
         android:src="@drawable/doc4" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="30dp"
+        android:text="Doctor"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        />
    <!-- <TextView
         android:id="@+id/doctor_text_view"
         android:layout_width="wrap_content"
@@ -31,15 +50,22 @@
         android:layout_below="@+id/doc_image_button"
         />
 -->
-
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:gravity="center|bottom"
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_vertical_margin">
     <ImageButton
         android:id="@+id/med_image_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="150dp"
-        android:layout_below="@+id/doc_image_button"
+
+        android:layout_marginStart="30dp"
+
         android:background="@drawable/doc_image_button_background"
 
         android:src="@drawable/medicine4"/>
@@ -54,15 +80,31 @@
         android:background="@drawable/doc_image_button_background"
     />-->
 
-
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Medicine"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="30dp"
+            />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:gravity="center|bottom"
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_vertical_margin">>
     <ImageButton
         android:id="@+id/lab_test_image_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 android:layout_below="@+id/med_image_button"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/doc_image_button_background"
 
         android:src="@drawable/labtest5" />
@@ -74,5 +116,15 @@ android:layout_below="@+id/med_image_button"
         android:layout_below="@+id/lab_test_image_button"
 
         android:layout_marginStart="180dp"/>-->
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="LabTest"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="30dp"
+            />
+    </LinearLayout>
 </RelativeLayout>
