@@ -25,6 +25,8 @@ public class JoinActivity extends AppCompatActivity {
     private EditText  InputPassword , InputEmail;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
+    private ProgressDialog loadingBar;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +36,7 @@ public class JoinActivity extends AppCompatActivity {
         InputPassword =(EditText) findViewById(R.id.inputpassword);
         InputEmail =(EditText) findViewById(R.id.inputemail);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-
+        loadingBar = new ProgressDialog(this);
 
         Joinnowbutton.setOnClickListener(new OnClickListener() {
             @Override
@@ -57,24 +59,30 @@ public class JoinActivity extends AppCompatActivity {
                     return;
                 }
 
+                loadingBar.setTitle("Creating Account");
+                loadingBar.setMessage("Please wait  ! We are validating ");
+                loadingBar.setCanceledOnTouchOutside(false);
+                loadingBar.show();
 
-                progressBar.setVisibility(VISIBLE);
+              //  progressBar.setVisibility(VISIBLE);
                 //create user
                 auth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(JoinActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 Toast.makeText(JoinActivity.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
-                                progressBar.setVisibility(GONE);
+                               // progressBar.setVisibility(GONE);
                                 // If sign in fails, display a message to the user. If sign in succeeds
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.
                                 if (!task.isSuccessful()) {
                                     Toast.makeText(JoinActivity.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
+                                    loadingBar.dismiss();
                                 } else {
                                     startActivity(new Intent(JoinActivity.this, MainActivity.class));
                                     finish();
+                                    loadingBar.dismiss();
                                 }
                             }
                         });

@@ -1,5 +1,6 @@
 package com.example.doccure;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private ProgressBar progressBar;
     private EditText inputEmail,inputPassword;
+    private ProgressDialog loadingBar;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         inputEmail = (EditText) findViewById(R.id.login_email);
         inputPassword = (EditText) findViewById(R.id.login_password);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-
+        loadingBar = new ProgressDialog(this);
 
 
         reset_button.setOnClickListener(new View.OnClickListener() {
@@ -59,13 +63,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        learnmoreButton.setOnClickListener(new View.OnClickListener() {
+      /*  learnmoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this , Home_NavigationActivity.class);
                 startActivity(intent);
             }
         });
+
+        */
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +88,12 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
+              //  progressBar.setVisibility(View.VISIBLE);
+
+                loadingBar.setTitle("Login Account");
+                loadingBar.setMessage("Please wait  ! We are validating ");
+                loadingBar.setCanceledOnTouchOutside(false);
+                loadingBar.show();
 
                 //authenticate user
                 auth.signInWithEmailAndPassword(email, password)
@@ -92,20 +103,25 @@ public class MainActivity extends AppCompatActivity {
                                 // If sign in fails, display a message to the user. If sign in succeeds
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.
-                                progressBar.setVisibility(View.GONE);
+                               // progressBar.setVisibility(View.GONE);
+
+
                                 if (!task.isSuccessful())
                                 {
                                     // there was an error
                                     if (password.length() < 6) {
                                         inputPassword.setError(getString(R.string.minimum_password));
+                                        loadingBar.dismiss();
                                     } else {
                                         Toast.makeText(MainActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
+                                   loadingBar.dismiss();
                                     }
                                 }else
                                 {
                                     Intent intent = new Intent(MainActivity.this, Home_NavigationActivity.class);
                                     startActivity(intent);
                                     finish();
+                                    loadingBar.dismiss();
                                 }
                             }
                         });
@@ -113,7 +129,3 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-
-
-
-

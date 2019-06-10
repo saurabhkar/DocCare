@@ -1,5 +1,6 @@
 package com.example.doccure;
 
+import android.app.ProgressDialog;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
     private Button btnReset, btnBack;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
+    private ProgressDialog loadingBar;
 
 
 
@@ -31,7 +33,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
         btnReset = (Button) findViewById(R.id.btn_reset_password);
         btnBack = (Button) findViewById(R.id.btn_back);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-
+        loadingBar  = new ProgressDialog(this);
         auth = FirebaseAuth.getInstance();
 
         btnBack.setOnClickListener(new View.OnClickListener() {
@@ -52,18 +54,28 @@ public class ResetPasswordActivity extends AppCompatActivity {
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
+               // progressBar.setVisibility(View.VISIBLE);
+
+
+                loadingBar.setTitle("Login Account");
+                loadingBar.setMessage("Please wait  ! We are validating ");
+                loadingBar.setCanceledOnTouchOutside(false);
+                loadingBar.show();
+
+
                 auth.sendPasswordResetEmail(email)
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(ResetPasswordActivity.this, "We have sent you instructions to reset your password!", Toast.LENGTH_SHORT).show();
+                                loadingBar.dismiss();
                                 } else {
                                     Toast.makeText(ResetPasswordActivity.this, "Failed to send reset email!", Toast.LENGTH_SHORT).show();
+                                loadingBar.dismiss();
                                 }
 
-                                progressBar.setVisibility(View.GONE);
+//                                progressBar.setVisibility(View.GONE);
                             }
                         });
             }

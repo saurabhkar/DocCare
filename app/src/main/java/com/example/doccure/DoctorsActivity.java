@@ -17,34 +17,35 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-public class MedicineActivity extends AppCompatActivity {
+public class DoctorsActivity extends AppCompatActivity {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference medicineRef = db.collection("Medicine");
+    private CollectionReference doctorRef = db.collection("Doctors");
 
-    private MedicineAdapter adapter;
+    private DoctorsNameAdapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.medicine_layout);
+        setContentView(R.layout.doctors_layout);
 
         setUpRecyclerView();
     }
 
     private void setUpRecyclerView() {
-        Query query = medicineRef.orderBy("slno", Query.Direction.ASCENDING);
-        FirestoreRecyclerOptions<NoteMedicine> options =  new FirestoreRecyclerOptions.Builder<NoteMedicine>()
-                .setQuery(query,NoteMedicine.class)
+        Query query = doctorRef.orderBy("priority", Query.Direction.ASCENDING);
+        FirestoreRecyclerOptions<Note> options =  new FirestoreRecyclerOptions.Builder<Note>()
+                .setQuery(query,Note.class)
                 .build();
 
 
-        adapter=new MedicineAdapter(options);
+        adapter=new DoctorsNameAdapter(options);
 
-        RecyclerView recyclerView = findViewById(R.id.medicine_recycler_view);
+        RecyclerView recyclerView = findViewById(R.id.doctor_recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
     }
 
     @Override
@@ -56,6 +57,6 @@ public class MedicineActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        adapter.stopListening();
+    adapter.stopListening();
     }
 }
