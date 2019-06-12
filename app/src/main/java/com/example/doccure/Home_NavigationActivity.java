@@ -21,18 +21,27 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Home_NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-private ImageButton doc_im_btn;
+    private ImageButton doc_im_btn , med_im_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home__navigation);
         doc_im_btn = (ImageButton) findViewById(R.id.doc_image_button);
+med_im_btn = (ImageButton) findViewById(R.id.med_image_button);
 
         doc_im_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Home_NavigationActivity.this , MainActivity.class);
+                Intent intent = new Intent(Home_NavigationActivity.this , DoctorsActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        med_im_btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                    Intent intent =  new Intent(Home_NavigationActivity.this , MedicineActivity.class);
+                    startActivity(intent);
             }
         });
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
