@@ -19,7 +19,8 @@
         <activity android:name=".JoinActivity" />
         <activity android:name=".DoctorsActivity"/>
         <activity android:name=".MedicineActivity"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".AppointmentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
