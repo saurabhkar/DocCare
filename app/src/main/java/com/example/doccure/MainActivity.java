@@ -16,14 +16,18 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
-
+    private FirebaseFirestore db=FirebaseFirestore.getInstance();
+    private CollectionReference appointmentRef=db.collection("Appointments");
     private Button joinhomeButton , loginButton ,learnmoreButton, joinnowButton ,reset_button;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
     private EditText inputEmail,inputPassword;
     private ProgressDialog loadingBar;
+
 
 
     @Override
@@ -63,15 +67,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-      /*  learnmoreButton.setOnClickListener(new View.OnClickListener() {
+       learnmoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this , Home_NavigationActivity.class);
+                Intent intent = new Intent(MainActivity.this , AppointmentActivity.class);
                 startActivity(intent);
             }
         });
 
-        */
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

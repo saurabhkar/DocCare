@@ -11,14 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ResetPasswordActivity"/>
+        <activity android:name=".TimeSlotActivity"></activity>
+        <activity android:name=".AppointmentActivity" />
+        <activity android:name=".ResetPasswordActivity" />
         <activity
             android:name=".Home_NavigationActivity"
             android:label="@string/title_activity_home__navigation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".JoinActivity" />
-        <activity android:name=".DoctorsActivity"/>
-        <activity android:name=".MedicineActivity"/>
+        <activity android:name=".DoctorsActivity" />
+        <activity android:name=".MedicineActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
