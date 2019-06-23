@@ -15,19 +15,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
+import com.example.doccure.database.DoctorsActivity;
+import com.example.doccure.database.MedicineActivity;
+import com.example.doccure.service.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Home_NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private ImageButton doc_im_btn , med_im_btn;
+    private Button doc_im_btn , med_im_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home__navigation);
-        doc_im_btn = (ImageButton) findViewById(R.id.doc_image_button);
-med_im_btn = (ImageButton) findViewById(R.id.med_image_button);
+        doc_im_btn = (Button) findViewById(R.id.doc_image_button);
+ //med_im_btn = (ImageButton) findViewById(R.id.med_image_button);
 
         doc_im_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +39,8 @@ med_im_btn = (ImageButton) findViewById(R.id.med_image_button);
             }
         });
 
+
+        /*
         med_im_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -44,17 +48,21 @@ med_im_btn = (ImageButton) findViewById(R.id.med_image_button);
                     startActivity(intent);
             }
         });
+
+        */
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+       // FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+       // fab.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View view) {
+       //         Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+        //                .setAction("Action", null).show();
+        //    }
+       // });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -125,7 +133,7 @@ med_im_btn = (ImageButton) findViewById(R.id.med_image_button);
 
             FirebaseAuth.getInstance().signOut();
             finish();
-            startActivity(new Intent(this,MainActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
             return true;
         }
 

@@ -23,10 +23,8 @@
         android:id="@+id/doc_image_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_marginStart="30dp"
         android:background="@drawable/doc_image_button_background"
-
         android:src="@drawable/doc4" />
     <TextView
         android:layout_width="wrap_content"
@@ -34,7 +32,7 @@
         android:padding="10dp"
         android:layout_marginTop="35dp"
         android:layout_marginLeft="30dp"
-        android:text="Doctor"
+        android:text="Book Your Appointment"
         android:textColor="@android:color/black"
         android:textSize="20dp"
         />

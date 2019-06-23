@@ -23,11 +23,11 @@
         android:src="@drawable/ic_person_black_24dp" />
 
     <TextView
-        android:layout_width="91dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:paddingTop="8dp"
-        android:text="Hello ABC"
+        android:text="Welcome to Doccure"
         android:layout_marginLeft="20dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
