@@ -67,13 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-       learnmoreButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this , AppointmentActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
 
         loginButton.setOnClickListener(new View.OnClickListener() {
