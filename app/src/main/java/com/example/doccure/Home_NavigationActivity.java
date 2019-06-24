@@ -19,6 +19,7 @@ import android.widget.ImageButton;
 import com.example.doccure.database.DoctorsActivity;
 import com.example.doccure.database.MedicineActivity;
 import com.example.doccure.service.MainActivity;
+import com.example.doccure.slotbook.appointmentBooking;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Home_NavigationActivity extends AppCompatActivity
@@ -34,7 +35,7 @@ public class Home_NavigationActivity extends AppCompatActivity
         doc_im_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Home_NavigationActivity.this , DoctorsActivity.class);
+                Intent intent = new Intent(Home_NavigationActivity.this , appointmentBooking.class);
                 startActivity(intent);
             }
         });

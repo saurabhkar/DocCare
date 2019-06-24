@@ -42,11 +42,14 @@
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
     <string name="email_id">Email ID</string>
-    <string name="date">Date of Appointment</string>
-    <string name="appointment_time"></string>
-    <string-array name="intervals">
-        <item> 10 AM - 1 PM </item>
-        <item> 3 PM - 5 PM </item>
-    </string-array>
 
+    <string name="Spinner">Android Spinner</string>
+    <string name="time_prompt">Choose your time interval</string>
+    <string-array name="time_interval">
+        <item>10 AM - 11 AM </item>
+        <item>11 AM - 12 PM </item>
+        <item>12 PM - 1 PM </item>
+        <item>3 PM - 4 PM </item>
+        <item>4 PM - 5 PM </item>
+    </string-array>
 </resources>
