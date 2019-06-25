@@ -62,6 +62,7 @@ public class AvailableSlotsActivity extends AppCompatActivity {
                     }
                     adapter=new AvailableSlotsAdapter(listData1);
                     rv.setAdapter(adapter);
+
                 }
             }
 
