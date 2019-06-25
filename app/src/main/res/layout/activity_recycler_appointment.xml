@@ -15,7 +15,7 @@
         android:textSize="25sp"
         android:textColor=" #fff "
         android:id="@+id/bookid"
-        android:background=" #2980b9 "/>
+        android:background="@drawable/side_nav_bar"/>
 
     <LinearLayout
         android:layout_width="match_parent"
