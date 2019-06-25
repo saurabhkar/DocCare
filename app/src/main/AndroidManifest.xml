@@ -15,12 +15,11 @@
         <activity android:name=".service.JoinActivity" />
         <activity android:name=".database.DoctorsActivity"/>
         <activity android:name=".database.MedicineActivity"/>
-        <activity android:name=".service.MainActivity"/>
         <activity android:name=".Home_NavigationActivity"/>
+        <activity android:name=".database.AvailableSlotsActivity"/>
 
-
-        <activity android:name=".slotbook.appointmentBooking"/>
-        <activity android:name=".database.AvailableSlotsActivity">
+            <activity android:name=".slotbook.appointmentBooking"/>
+        <activity android:name=".service.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

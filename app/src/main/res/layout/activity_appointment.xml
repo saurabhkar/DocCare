@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp"
-        android:background="@color/colorPrimaryDark">
+        android:background="@drawable/side_nav_bar">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
