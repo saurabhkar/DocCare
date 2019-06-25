@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.example.doccure.Home_NavigationActivity;
 import com.example.doccure.R;
+import com.example.doccure.database.AvailableSlotsActivity;
 import com.example.doccure.service.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -58,6 +59,7 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
     ImageButton btndatebirthpicker ;
     private int bYear , bMonth , bDay;
 
+    Button occupybtn;
 
 
     @Override
@@ -84,6 +86,7 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
         btndatepicker.setOnClickListener(this);
         btndatebirthpicker.setOnClickListener(this);
 
+     //   occupybtn = (Button) findViewById(R.id.book_occupy_btn);
 
         sp1.setOnItemSelectedListener(this);
 
@@ -96,10 +99,14 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
         sp1.setAdapter(adapter);
 
 
-
-
-
-
+/*        occupybtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(appointmentBooking.this , AvailableSlotsActivity.class);
+                startActivity(intent);
+            }
+        });
+*/
         //SETUP FB
         db= FirebaseDatabase.getInstance().getReference();
         helper=new FirebaseHelper(db);
@@ -292,6 +299,7 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
                     userdataMap.put("dob",dob);
                     userdataMap.put("time",time);
                     userdataMap.put("date",date);
+
                     RootRef.child("Users").child(date).child(time).updateChildren(userdataMap)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
@@ -315,12 +323,21 @@ else{
                     Toast.makeText(appointmentBooking.this, "Slot already booked , Check for availabilty ", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
                 }
-    }
+
+
+            }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
+
+
+
+
+
+
+
 
 
         });
@@ -387,4 +404,8 @@ else{
 
 
     }
+
+
+
+
         }
