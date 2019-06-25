@@ -1,4 +1,4 @@
-package com.example.doccure;
+package com.example.doccure.database;
 
 public class Note {
     private String title;

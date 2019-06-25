@@ -1,4 +1,4 @@
-package com.example.doccure;
+package com.example.doccure.service;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.doccure.Home_NavigationActivity;
+import com.example.doccure.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

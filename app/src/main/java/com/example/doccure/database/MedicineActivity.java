@@ -1,51 +1,45 @@
-package com.example.doccure;
+package com.example.doccure.database;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
+import com.example.doccure.R;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
-public class DoctorsActivity extends AppCompatActivity {
+public class MedicineActivity extends AppCompatActivity {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference doctorRef = db.collection("Doctors");
+    private CollectionReference medicineRef = db.collection("Medicine");
 
-    private DoctorsNameAdapter adapter;
+    private MedicineAdapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.doctors_layout);
+        setContentView(R.layout.medicine_layout);
 
         setUpRecyclerView();
     }
 
     private void setUpRecyclerView() {
-        Query query = doctorRef.orderBy("priority", Query.Direction.ASCENDING);
-        FirestoreRecyclerOptions<Note> options =  new FirestoreRecyclerOptions.Builder<Note>()
-                .setQuery(query,Note.class)
+        Query query = medicineRef.orderBy("slno", Query.Direction.ASCENDING);
+        FirestoreRecyclerOptions<NoteMedicine> options =  new FirestoreRecyclerOptions.Builder<NoteMedicine>()
+                .setQuery(query,NoteMedicine.class)
                 .build();
 
 
-        adapter=new DoctorsNameAdapter(options);
+        adapter=new MedicineAdapter(options);
 
-        RecyclerView recyclerView = findViewById(R.id.doctor_recycler_view);
+        RecyclerView recyclerView = findViewById(R.id.medicine_recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
-
     }
 
     @Override
@@ -57,6 +51,6 @@ public class DoctorsActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-    adapter.stopListening();
+        adapter.stopListening();
     }
 }
