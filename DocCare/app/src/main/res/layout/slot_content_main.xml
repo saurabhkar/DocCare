@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".slotbook.appointmentBooking">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@drawable/side_nav_bar">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="#fff"
+            android:text="Book an Appointment"/>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/input_appoin_name"
+            android:drawablePadding="10dp"
+            android:layout_margin="10dp"
+            android:drawableLeft="@drawable/ic_person_outline_black_24dp"
+            android:layout_width="350dp"
+            android:textColor="#000000"
+            android:textColorHint="#696969"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Name"/>
+        <EditText
+            android:id="@+id/input_dob"
+            android:drawablePadding="10dp"
+            android:layout_margin="10dp"
+            android:drawableLeft="@drawable/ic_date_range_black_24dp"
+            android:layout_width="350dp"
+            android:textColor="#000000"
+            android:textColorHint="#696969"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:hint="D.O.B"/>
+        <EditText
+            android:id="@+id/input_appoin_phone"
+            android:drawablePadding="10dp"
+            android:layout_margin="10dp"
+            android:drawableLeft="@drawable/ic_phone_black_24dp"
+            android:layout_width="350dp"
+            android:textColor="#000000"
+            android:textColorHint="#696969"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:hint="Phone Number"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:text="Time Interval"
+            android:padding="8dip"
+            android:layout_margin="10dp"/>
+
+        <!-- Spinner Dropdown -->
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="10dp"
+            android:backgroundTint="#000"
+            android:padding="20dip"
+            />
+    </LinearLayout>
+
+
+
+    <!-- Select Label -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dip"
+            android:text="Time Slot"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_marginLeft="18dp"
+
+            />
+
+        <!-- Spinner Dropdown -->
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="269dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:backgroundTint="#000"
+            android:padding="20dip" />
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/book_appoinment_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttonstylepink"
+        android:layout_margin="100dp"
+        android:text="Book Appointment"
+        android:drawableRight="@drawable/ic_send_black_24dp"
+        android:textColor="#fff"/>
+
+
+</LinearLayout>
