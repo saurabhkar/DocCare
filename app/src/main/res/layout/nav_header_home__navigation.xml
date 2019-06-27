@@ -37,7 +37,6 @@
         android:layout_width="91dp"
         android:layout_marginTop="7dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:text="ABC MAIL" />
+        android:layout_marginLeft="20dp" />
 
 </LinearLayout>

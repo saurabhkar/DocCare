@@ -72,36 +72,6 @@ public class AvailableSlotsActivity extends AppCompatActivity {
             }
         });
 
-
-      /*  mm.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()){
-                    for (DataSnapshot npsnapshot : dataSnapshot.getChildren()){
-                        List_Data l=npsnapshot.getValue(List_Data.class);
-                        listData2.add(l);
-                    }
-                    adapter=new AvailableSlotsAdapter(listData2);
-                    rv.setAdapter(adapter);
-
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-*/
-
-
-     //   Log.i("MyAndroidClass", Arrays.(listData1));
-//        System.out.println(listData2);
-
-
-
-
-
     }
 
 }

@@ -169,7 +169,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="8dip"
+            android:padding="8dp"
             android:text="Time Slot"
             android:textSize="20sp"
             android:textColor="#000"
@@ -180,8 +180,10 @@
             android:id="@+id/spinner2"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:padding="20dip"
+            android:padding="15dp"
+            android:focusable="true"
             android:layout_margin="10dp"
+            style="@style/Base.Widget.AppCompat.DropDownItem.Spinner"
             android:backgroundTint="#000"
             />
     </LinearLayout>

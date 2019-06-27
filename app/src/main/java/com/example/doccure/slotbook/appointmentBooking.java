@@ -2,11 +2,19 @@ package com.example.doccure.slotbook;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
@@ -169,7 +177,7 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
 
 
             TextView textView2 = (TextView)parent.getChildAt(0);
-            textView2.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+            textView2.setTextColor(getResources().getColor(R.color.pink));
 
         }
 
@@ -184,7 +192,7 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
             dataAdapter2.notifyDataSetChanged();
             inputtime.setAdapter(dataAdapter2);
             TextView textView3 = (TextView)parent.getChildAt(0);
-            textView3.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+            textView3.setTextColor(getResources().getColor(R.color.pink));
 
         }
 
@@ -311,6 +319,8 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
 
                                         Intent intent = new Intent(appointmentBooking.this, Home_NavigationActivity.class);
                                         startActivity(intent);
+                                        notifications();
+
                                     }
                                     else{
                                         Toast.makeText(appointmentBooking.this, "Network Error ! Please try again ", Toast.LENGTH_SHORT).show();
@@ -341,6 +351,37 @@ else{
 
 
         });
+    }
+
+    private void notifications() {
+        String name = inputname.getText().toString();
+        String date = inputdate.getText().toString();
+        String time = inputtime.getSelectedItem().toString();
+
+        int notific_id =1;
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+        builder.setSmallIcon(R.drawable.logo)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.logo))
+                .setContentTitle(name)
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(getResources().getString(R.string.quote_notifi)))
+                .setContentText(time)
+                .setAutoCancel(true);
+
+        Uri path = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        builder.setSound(path);
+
+        NotificationManager notificationManager=(NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            String channelId ="DocCure";
+            NotificationChannel channel = new NotificationChannel(channelId,
+                    "Channel human readable title",
+                    NotificationManager.IMPORTANCE_DEFAULT);
+            notificationManager.createNotificationChannel(channel);
+
+            builder.setChannelId(channelId);
+        }
+        notificationManager.notify(notific_id,builder.build());
     }
 
 

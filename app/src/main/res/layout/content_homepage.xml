@@ -11,6 +11,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="50dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/side_nav_bar">
 
         <TextView

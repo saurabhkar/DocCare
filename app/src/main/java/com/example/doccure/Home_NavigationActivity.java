@@ -41,6 +41,10 @@ public class Home_NavigationActivity extends AppCompatActivity
         });
 
 
+        getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_INHERIT);
+
+
+
         /*
         med_im_btn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -90,6 +94,7 @@ public class Home_NavigationActivity extends AppCompatActivity
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home__navigation, menu);
         return true;
+
     }
 
     @Override
@@ -100,9 +105,9 @@ public class Home_NavigationActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+      /*  if (id == R.id.action_settings) {
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
