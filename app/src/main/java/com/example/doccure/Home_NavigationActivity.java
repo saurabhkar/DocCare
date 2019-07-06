@@ -15,10 +15,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
+import com.example.doccure.database.AvailableSlotsActivity;
 import com.example.doccure.database.DoctorsActivity;
 import com.example.doccure.database.MedicineActivity;
 import com.example.doccure.service.MainActivity;
+import com.example.doccure.service.ResetPasswordActivity;
 import com.example.doccure.slotbook.appointmentBooking;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -119,20 +122,27 @@ public class Home_NavigationActivity extends AppCompatActivity
         int id = item.getItemId();
 
 
-        if (id == R.id.nav_delivery) {
+        if (id == R.id.nav_time_full) {
+            Intent intent = new Intent(Home_NavigationActivity.this , AvailableSlotsActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_profile) {
+           // Toast.makeText(this,"Funtionality is not added yet",Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_myappointment) {
+            //Toast.makeText(this,"Funtionality is not added yet",Toast.LENGTH_SHORT).show();
 
         }
         else if (id == R.id.nav_orders) {
+            //Toast.makeText(this,"Funtionality is not added yet",Toast.LENGTH_SHORT).show();
 
         }
         else if (id == R.id.nav_refer) {
+            //Toast.makeText(this,"Funtionality is not added yet",Toast.LENGTH_SHORT).show();
 
         }
         else if (id == R.id.nav_contact) {
+            //Toast.makeText(this,"Funtionality is not added yet",Toast.LENGTH_SHORT).show();
 
         }
         else if (id == R.id.nav_sign_out) {
