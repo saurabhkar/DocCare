@@ -67,7 +67,7 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
     ImageButton btndatebirthpicker ;
     private int bYear , bMonth , bDay;
 
-    Button occupybtn;
+//    Button occupybtn;
 
 
     @Override
@@ -133,12 +133,6 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
 
 
 
-
-
-
-
-
-
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
@@ -177,7 +171,7 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
 
 
             TextView textView2 = (TextView)parent.getChildAt(0);
-            textView2.setTextColor(getResources().getColor(R.color.pink));
+            textView2.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
 
         }
 
@@ -192,7 +186,7 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
             dataAdapter2.notifyDataSetChanged();
             inputtime.setAdapter(dataAdapter2);
             TextView textView3 = (TextView)parent.getChildAt(0);
-            textView3.setTextColor(getResources().getColor(R.color.pink));
+            textView3.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
 
         }
 
@@ -341,14 +335,6 @@ else{
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-
-
-
-
-
-
-
-
 
         });
     }

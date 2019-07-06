@@ -30,11 +30,13 @@ public class ResetPasswordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
-        InputEmail = (EditText) findViewById(R.id.inputemail);
+        InputEmail = (EditText) findViewById(R.id.email);
         btnReset = (Button) findViewById(R.id.btn_reset_password);
         btnBack = (Button) findViewById(R.id.btn_back);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         loadingBar  = new ProgressDialog(this);
+
+
         auth = FirebaseAuth.getInstance();
 
         btnBack.setOnClickListener(new View.OnClickListener() {
@@ -48,15 +50,12 @@ public class ResetPasswordActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String email = InputEmail.getText().toString().trim();
+                String eemail = InputEmail.getText().toString().trim();
 
-                if (TextUtils.isEmpty(email)) {
+                if (TextUtils.isEmpty(eemail)) {
                     Toast.makeText(getApplication(), "Enter your registered email id", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-               // progressBar.setVisibility(View.VISIBLE);
-
 
                 loadingBar.setTitle("Login Account");
                 loadingBar.setMessage("Please wait  ! We are validating ");
@@ -64,7 +63,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
                 loadingBar.show();
 
 
-                auth.sendPasswordResetEmail(email)
+                auth.sendPasswordResetEmail(eemail)
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {

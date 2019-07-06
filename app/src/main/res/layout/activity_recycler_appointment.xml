@@ -43,11 +43,11 @@
         android:hint="Date"
         android:background=" #fff "
         android:textColorHint=" #1f618d "
-        android:textColor="#fff"/>
+        android:textColor="#000"/>
 
     </LinearLayout>
     <Button
-        android:text="View"
+        android:text="View Slots"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
