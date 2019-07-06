@@ -67,7 +67,7 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
     ImageButton btndatebirthpicker ;
     private int bYear , bMonth , bDay;
 
-    Button occupybtn;
+//    Button occupybtn;
 
 
     @Override
@@ -130,12 +130,6 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
 
 
     }
-
-
-
-
-
-
 
 
 
@@ -339,14 +333,6 @@ else{
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-
-
-
-
-
-
-
-
 
         });
     }
