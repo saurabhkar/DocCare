@@ -13,7 +13,7 @@
         android:padding="5dp"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal">
-         <TextView
+      <!--   <TextView
             android:id="@+id/text_view_slno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
              android:layout_marginTop="3dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true" /> -->
 
         <TextView
             android:paddingLeft="@dimen/activity_horizontal_margin"

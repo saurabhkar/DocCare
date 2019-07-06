@@ -7,9 +7,9 @@
 
 
         <item
-            android:id="@+id/nav_delivery"
-            android:icon="@drawable/ic_airport_shuttle_black_24dp"
-            android:title="Home Delivery" />
+            android:id="@+id/nav_time_full"
+            android:icon="@drawable/ic_date_range_black_24dp"
+            android:title="Check already filled time slot" />
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_person_outline_black_24dp"

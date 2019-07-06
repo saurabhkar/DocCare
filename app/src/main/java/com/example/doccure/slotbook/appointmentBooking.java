@@ -174,14 +174,12 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
             dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             dataAdapter2.notifyDataSetChanged();
             inputtime.setAdapter(dataAdapter2);
-
-
             TextView textView2 = (TextView)parent.getChildAt(0);
-            textView2.setTextColor(getResources().getColor(R.color.pink));
+            textView2.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
 
         }
 
-        if(st.contentEquals("12 PM - 1 PM ")) {
+       if(st.contentEquals("12 PM - 1 PM ")) {
             List<String> list = new ArrayList<String>();
             list.add("12:00 PM");list.add("12:05 PM");list.add("12:10 PM");list.add("12:15 PM");
             list.add("12:20 PM");list.add("12:25 PM");list.add("12:30 PM");list.add("12:35 PM");list.add("12:40 PM");
@@ -192,7 +190,7 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
             dataAdapter2.notifyDataSetChanged();
             inputtime.setAdapter(dataAdapter2);
             TextView textView3 = (TextView)parent.getChildAt(0);
-            textView3.setTextColor(getResources().getColor(R.color.pink));
+            textView3.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
 
         }
 

@@ -22,7 +22,7 @@ public class MedicineAdapter extends FirestoreRecyclerAdapter<NoteMedicine, Medi
     @Override
     protected void onBindViewHolder(@NonNull MedicineNameHolder viewHolder, int position , @NonNull NoteMedicine model) {
         viewHolder.textViewName.setText(model.getName());
-        viewHolder.textViewSlno.setText(model.getSlno());
+        //viewHolder.textViewSlno.setText(model.getSlno());
     }
 
     @Override
@@ -41,7 +41,7 @@ public class MedicineAdapter extends FirestoreRecyclerAdapter<NoteMedicine, Medi
         public MedicineNameHolder(View itemView) {
             super(itemView);
             textViewName = itemView.findViewById(R.id.text_view_name);
-            textViewSlno=itemView.findViewById(R.id.text_view_slno);
+           // textViewSlno=itemView.findViewById(R.id.text_view_slno);
         }
     }
 

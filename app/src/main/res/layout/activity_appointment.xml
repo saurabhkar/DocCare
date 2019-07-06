@@ -181,10 +181,13 @@
             android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:padding="15dp"
+           android:background="#000"
             android:focusable="true"
             android:layout_margin="10dp"
-            style="@style/Base.Widget.AppCompat.DropDownItem.Spinner"
             android:backgroundTint="#000"
+            android:textColor="#FFFF"
+            style="@style/Base.Widget.AppCompat.DropDownItem.Spinner"
+
             />
     </LinearLayout>
     <Button
