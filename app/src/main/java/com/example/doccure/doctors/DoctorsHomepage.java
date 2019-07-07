@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.doccure.R;
@@ -24,7 +25,8 @@ import java.util.Calendar;
 public class DoctorsHomepage extends AppCompatActivity implements View.OnClickListener {
 
 
-    ImageButton docbtnsee ,doc_signout;
+    ImageButton docbtnsee ;
+    ImageView doc_signout;
     private TextView inputdateslot;
     private int mYear , mMonth , mDay;
     String dateslot ;
@@ -41,7 +43,7 @@ public class DoctorsHomepage extends AppCompatActivity implements View.OnClickLi
         docbtnsee.setOnClickListener(this);
         inputdateslot = (TextView) findViewById(R.id.doc_date_slots);
         btnviewslots = (Button) findViewById(R.id.doc_book_appointment);
-        doc_signout=(ImageButton)findViewById(R.id.doc_sign_out);
+        doc_signout=(ImageView) findViewById(R.id.doc_sign_out);
         btnviewslots.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
