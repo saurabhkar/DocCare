@@ -46,6 +46,7 @@ public class JoinActivity extends AppCompatActivity {
                 String email = InputEmail.getText().toString().trim();
                 String password = InputPassword.getText().toString().trim();
 
+
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
                     return;

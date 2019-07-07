@@ -19,18 +19,17 @@
         <activity android:name=".Home_NavigationActivity" />
         <activity android:name=".database.MedicineActivity" />
         <activity android:name=".database.AvailableSlotsActivity" />
-        <activity android:name=".slotbook.appointmentBooking" />
         <activity android:name=".service.MainActivity" />
+        <activity android:name=".DoctorService.MedicineListActivity"/>
+        <activity android:name=".doctors.DoctorLogin"/>
+        <activity android:name=".slotbook.appointmentBooking" >
         <activity android:name=".doctors.DoctorsAppointment" />
-        <activity android:name=".DoctorService.MedicineListActivity" />
         <activity android:name=".doctors.DoctorsHomepage">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
