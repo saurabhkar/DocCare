@@ -7,23 +7,45 @@
     android:orientation="vertical"
     tools:context=".service.FirstActivity"
     android:background="#fff">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:background="@drawable/logo"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="100dp"/>
-    <Button
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@drawable/side_nav_bar">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:text="Welcome to DocCure"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+        android:id="@+id/loginuser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Login as User"
-        />
+            android:background="@drawable/buttonstylepink"
+        android:text="Login as User" />
     <Button
+        android:id="@+id/logindoctor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
       android:layout_marginTop="30dp"
-        android:text="Login as Doctor"
-        />
-
+        android:background="@drawable/buttonstylepink"
+        android:text="Login as Doctor" />
+    </LinearLayout>
 </LinearLayout>
+
