@@ -11,7 +11,7 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".doctors.LoginDoctorActivity"></activity>
+        <activity android:name=".service.FirstActivity"></activity>
         <activity android:name=".DoctorService.NewNoteMedicine" />
         <activity android:name=".service.ResetPasswordActivity" />
         <activity android:name=".service.JoinActivity" />

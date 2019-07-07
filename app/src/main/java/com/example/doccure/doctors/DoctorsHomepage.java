@@ -103,6 +103,7 @@ doc_signout=(ImageButton)findViewById(R.id.doc_sign_out);
                     case R.id.signOut_action:
                         Intent intent = new Intent(DoctorsHomepage.this, LoginDoctorActivity.class);
                         startActivity(intent);
+                        finish();
                         break;
                 }
                 return true;
