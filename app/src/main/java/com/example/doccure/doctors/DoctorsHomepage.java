@@ -112,6 +112,7 @@ public class DoctorsHomepage extends AppCompatActivity implements View.OnClickLi
                     case R.id.signOut_action:
                         Intent intent = new Intent(DoctorsHomepage.this, DoctorLogin.class);
                         startActivity(intent);
+                        finish();
                         break;
                 }
                 return true;

@@ -11,6 +11,10 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
+=======
+        <activity android:name=".service.FirstActivity"></activity>
+>>>>>>> 741e22f3b137666f5daef3e911dce0f27d1d3b20
         <activity android:name=".DoctorService.NewNoteMedicine" />
         <activity android:name=".service.ResetPasswordActivity" />
         <activity android:name=".service.JoinActivity" />

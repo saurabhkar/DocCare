@@ -29,7 +29,7 @@ public class DoctorLogin extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_doctor);
+        setContentView(R.layout.login_doctor_activity);
 
 
         loadingBar= new ProgressDialog(this);
