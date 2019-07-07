@@ -6,26 +6,31 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo"
-        android:label="@string/app_name"
-        android:roundIcon="@drawable/logo"
+        android:icon="@mipmap/logo"
+        android:label="DocCare"
+        android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".DoctorService.NewNoteMedicine" />
-        <activity android:name=".service.ResetPasswordActivity" />
-        <activity android:name=".service.JoinActivity" />
+        <activity android:name=".DoctorService.MedicineListActivity"/>
+
         <activity android:name=".database.DoctorsActivity" />
         <activity android:name=".database.MedicineActivity" />
         <activity android:name=".database.AvailableSlotsActivity" />
-        <activity android:name=".service.MainActivity" />
-        <activity android:name=".DoctorService.MedicineListActivity"/>
+
         <activity android:name=".slotbook.appointmentBooking"/>
+
+        <activity android:name=".Home_NavigationActivity" />
+
+
         <activity android:name=".doctors.DoctorsAppointment" />
         <activity android:name=".doctors.DoctorLogin"/>
         <activity android:name=".doctors.DoctorsHomepage"/>
 
-        <activity android:name=".Home_NavigationActivity" >
-
+        <activity android:name=".service.ResetPasswordActivity" />
+        <activity android:name=".service.JoinActivity" />
+        <activity android:name=".service.MainActivity" />
+        <activity android:name=".service.FirstActivity">
                         <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />

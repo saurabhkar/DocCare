@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         loadingBar = new ProgressDialog(this);
 
-
         reset_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,15 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-      /*  learnmoreButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this , Home_NavigationActivity.class);
-                startActivity(intent);
-            }
-        });
 
-        */
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,8 +81,6 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-              //  progressBar.setVisibility(View.VISIBLE);
-
                 loadingBar.setTitle("Login Account");
                 loadingBar.setMessage("Please wait  ! We are validating ");
                 loadingBar.setCanceledOnTouchOutside(false);
@@ -102,11 +91,6 @@ public class MainActivity extends AppCompatActivity {
                         .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                // If sign in fails, display a message to the user. If sign in succeeds
-                                // the auth state listener will be notified and logic to handle the
-                                // signed in user can be handled in the listener.
-                               // progressBar.setVisibility(View.GONE);
-
 
                                 if (!task.isSuccessful())
                                 {

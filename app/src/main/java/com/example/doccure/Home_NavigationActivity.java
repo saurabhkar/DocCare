@@ -2,8 +2,7 @@ package com.example.doccure;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,26 +13,26 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.doccure.database.AvailableSlotsActivity;
-import com.example.doccure.database.DoctorsActivity;
 import com.example.doccure.database.MedicineActivity;
 import com.example.doccure.service.MainActivity;
-import com.example.doccure.service.ResetPasswordActivity;
 import com.example.doccure.slotbook.appointmentBooking;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Home_NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private Button doc_im_btn , med_im_btn;
+    private Button doc_im_btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home__navigation);
         doc_im_btn = (Button) findViewById(R.id.doc_image_button);
- //med_im_btn = (ImageButton) findViewById(R.id.med_image_button);
 
         doc_im_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,34 +42,11 @@ public class Home_NavigationActivity extends AppCompatActivity
             }
         });
 
-
         getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_INHERIT);
-
-
-
-        /*
-        med_im_btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                    Intent intent =  new Intent(Home_NavigationActivity.this , MedicineActivity.class);
-                    startActivity(intent);
-            }
-        });
-
-        */
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-       // FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-       // fab.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-        //    public void onClick(View view) {
-       //         Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-        //                .setAction("Action", null).show();
-        //    }
-       // });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -126,38 +102,39 @@ public class Home_NavigationActivity extends AppCompatActivity
             Intent intent = new Intent(Home_NavigationActivity.this , AvailableSlotsActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_profile) {
-           // Toast.makeText(this,"Funtionality is not added yet",Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.change_password) {
+            Toast.makeText(this, "This functionality has not been added yet. ", Toast.LENGTH_SHORT).show();
+
 
         } else if (id == R.id.nav_myappointment) {
-            //Toast.makeText(this,"Funtionality is not added yet",Toast.LENGTH_SHORT).show();
-
+            Toast.makeText(this, "This functionality has not been added yet. ", Toast.LENGTH_SHORT).show();
         }
         else if (id == R.id.nav_medicine) {
             Intent intent = new Intent(Home_NavigationActivity.this , MedicineActivity.class);
             startActivity(intent);
-            //Toast.makeText(this,"Funtionality is not added yet",Toast.LENGTH_SHORT).show();
-
         }
         else if (id == R.id.nav_refer) {
-            //Toast.makeText(this,"Funtionality is not added yet",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "This functionality has not been added yet. ", Toast.LENGTH_SHORT).show();
 
         }
         else if (id == R.id.nav_contact) {
-            //Toast.makeText(this,"Funtionality is not added yet",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "This functionality has not been added yet. ", Toast.LENGTH_SHORT).show();
 
         }
         else if (id == R.id.nav_sign_out) {
-
-            FirebaseAuth.getInstance().signOut();
-            finish();
-            startActivity(new Intent(this, MainActivity.class));
-            finish();
-            return true;
+            signout();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    private boolean signout() {
+        FirebaseAuth.getInstance().signOut();
+        finish();
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
         return true;
     }
 

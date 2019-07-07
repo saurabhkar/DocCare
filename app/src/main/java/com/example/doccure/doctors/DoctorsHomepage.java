@@ -23,10 +23,12 @@ import com.example.doccure.service.ResetPasswordActivity;
 
 import java.util.Calendar;
 
+import io.paperdb.Paper;
+
 public class DoctorsHomepage extends AppCompatActivity implements View.OnClickListener {
 
 
-    ImageButton docbtnsee ;
+    ImageView docbtnsee ;
     ImageView doc_signout;
     private TextView inputdateslot;
     private int mYear , mMonth , mDay;
@@ -40,7 +42,7 @@ public class DoctorsHomepage extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_doctor_homepage);
 
 doctor_med=(Button)findViewById(R.id.doc_medicine);
-        docbtnsee = (ImageButton) findViewById(R.id.doc_slots_view);
+        docbtnsee = (ImageView) findViewById(R.id.doc_slots_view);
         docbtnsee.setOnClickListener(this);
         inputdateslot = (TextView) findViewById(R.id.doc_date_slots);
         btnviewslots = (Button) findViewById(R.id.doc_book_appointment);
@@ -123,6 +125,7 @@ doctor_med=(Button)findViewById(R.id.doc_medicine);
             public boolean onMenuItemClick(MenuItem Item) {
                 switch (Item.getItemId()) {
                     case R.id.signOut_action:
+                        Paper.book().destroy();
                         Intent intent = new Intent(DoctorsHomepage.this, DoctorLogin.class);
                         startActivity(intent);
                         finish();

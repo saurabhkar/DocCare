@@ -58,6 +58,7 @@ dependencies {
 
     implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
 
+    implementation 'io.paperdb:paperdb:2.6'
 }
 
 apply plugin: 'com.google.gms.google-services'

@@ -45,15 +45,16 @@
             android:orientation="horizontal"
             android:layout_marginTop="5dp"
             android:gravity="center"
-            android:background="">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+            android:background="@drawable/ic_crop_16_9"
+            android:padding="40dp">
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/doc_slots_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:background=" #fff "
                 android:layout_marginTop="5dp"
+                android:background="#fff"
                 android:src="@drawable/ic_date_range_black_24dp"/>
 
             <TextView

@@ -13,11 +13,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.doccure.R;
+import com.example.doccure.service.Prevalent.Prevalent;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import io.paperdb.Paper;
 
 public class DoctorLogin extends AppCompatActivity {
 
@@ -25,6 +28,8 @@ public class DoctorLogin extends AppCompatActivity {
     private Button loginbtn;
     private ProgressDialog loadingBar;
     private String parentDbName = "Doctors";
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,6 +48,8 @@ public class DoctorLogin extends AppCompatActivity {
                 loginuser();
             }
         });
+
+        Paper.init(this);
 
     }
 
@@ -69,6 +76,9 @@ public class DoctorLogin extends AppCompatActivity {
     }
 
     private void AllowAccess(final String username,final String password) {
+
+        Paper.book().write(Prevalent.userUsernameKey,username);
+        Paper.book().write(Prevalent.userPasswordKey,password);
 
         final DatabaseReference Rootref;
         Rootref = FirebaseDatabase.getInstance().getReference();
