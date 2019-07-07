@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-
     android:orientation="vertical">
 
     <LinearLayout
@@ -25,13 +24,12 @@
             android:id="@+id/doc_sign_out"
             android:layout_width="60dp"
             android:layout_height="40dp"
-            android:layout_gravity="center"
+            android:layout_gravity="right"
             android:background="@drawable/side_nav_bar"
-            android:layout_marginLeft="40dp"
             android:src="@drawable/ic_more_vert_black_24dp"
             android:onClick="showMenu"/>
-
     </LinearLayout>
+
 
     <LinearLayout
         android:gravity="center"

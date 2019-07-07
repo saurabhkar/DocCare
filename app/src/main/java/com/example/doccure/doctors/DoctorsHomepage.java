@@ -1,5 +1,6 @@
 package com.example.doccure.doctors;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -35,17 +36,25 @@ public class DoctorsHomepage extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_homepage);
 
+
         docbtnsee = (ImageButton) findViewById(R.id.doc_slots_view);
         docbtnsee.setOnClickListener(this);
         inputdateslot = (TextView) findViewById(R.id.doc_date_slots);
         btnviewslots = (Button) findViewById(R.id.doc_book_appointment);
-doc_signout=(ImageButton)findViewById(R.id.doc_sign_out);
+        doc_signout=(ImageButton)findViewById(R.id.doc_sign_out);
         btnviewslots.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                viewAppointment();
+                Intent intent = new Intent(DoctorsHomepage.this , DoctorsAppointment.class);
+                intent.putExtra("slot_date",dateslot);
 
+                startActivity(intent);
             }
         });
+    }
+    private void viewAppointment() {
+        dateslot = inputdateslot.getText().toString();
     }
 
     @Override
@@ -101,7 +110,7 @@ doc_signout=(ImageButton)findViewById(R.id.doc_sign_out);
             public boolean onMenuItemClick(MenuItem Item) {
                 switch (Item.getItemId()) {
                     case R.id.signOut_action:
-                        Intent intent = new Intent(DoctorsHomepage.this, LoginDoctorActivity.class);
+                        Intent intent = new Intent(DoctorsHomepage.this, DoctorLogin.class);
                         startActivity(intent);
                         break;
                 }

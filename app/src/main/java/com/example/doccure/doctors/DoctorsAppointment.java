@@ -1,9 +1,11 @@
 package com.example.doccure.doctors;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
 import com.example.doccure.R;
 import com.example.doccure.database.AvailableSlotsAdapter;
@@ -20,8 +22,6 @@ import java.util.List;
 public class DoctorsAppointment extends AppCompatActivity {
 
     private List<Doctors_Data> doctorsData1;
-
-
     private RecyclerView rv;
     private doctorsAppointmentAdapter adapter;
 
@@ -31,12 +31,14 @@ public class DoctorsAppointment extends AppCompatActivity {
         setContentView(R.layout.doctors_view_appointment_recycler);
         rv=(RecyclerView)findViewById(R.id.recyclerview_doctorview);
 
-
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
         doctorsData1=new ArrayList<>();
 
-        final DatabaseReference nm= FirebaseDatabase.getInstance().getReference().child("Users").child("25-6-2019");
+        Intent intent  = getIntent();
+        String bookDate = intent.getStringExtra("slot_date");
+
+        final DatabaseReference nm= FirebaseDatabase.getInstance().getReference().child("Users").child(bookDate);
 
         nm.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -50,6 +52,9 @@ public class DoctorsAppointment extends AppCompatActivity {
                     adapter=new doctorsAppointmentAdapter(doctorsData1);
                     rv.setAdapter(adapter);
 
+                }
+                else{
+                    Toast.makeText(DoctorsAppointment.this, "No appointments booked on the given date .", Toast.LENGTH_SHORT).show();
                 }
             }
 
