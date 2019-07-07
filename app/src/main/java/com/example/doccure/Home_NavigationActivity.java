@@ -150,6 +150,7 @@ public class Home_NavigationActivity extends AppCompatActivity
             FirebaseAuth.getInstance().signOut();
             finish();
             startActivity(new Intent(this, MainActivity.class));
+            finish();
             return true;
         }
 
