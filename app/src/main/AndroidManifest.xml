@@ -11,7 +11,8 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DoctorService.NewNoteMedicine"></activity>
+        <activity android:name=".doctors.LoginDoctorActivity"></activity>
+        <activity android:name=".DoctorService.NewNoteMedicine" />
         <activity android:name=".service.ResetPasswordActivity" />
         <activity android:name=".service.JoinActivity" />
         <activity android:name=".database.DoctorsActivity" />
@@ -19,23 +20,16 @@
         <activity android:name=".database.MedicineActivity" />
         <activity android:name=".database.AvailableSlotsActivity" />
         <activity android:name=".service.MainActivity" />
-        <activity android:name=".doctors.DoctorsAppointment"/>
-        <activity android:name=".doctors.DoctorsHomepage"/>
         <activity android:name=".DoctorService.MedicineListActivity"/>
-
-
-
-
-
         <activity android:name=".doctors.DoctorLogin"/>
         <activity android:name=".slotbook.appointmentBooking" >
-
-        <intent-filter>
-            <action android:name="android.intent.action.VIEW" />
+        <activity android:name=".doctors.DoctorsAppointment" />
+        <activity android:name=".doctors.DoctorsHomepage">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

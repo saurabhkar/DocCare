@@ -3,31 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
+
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="50dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
         android:background="@drawable/side_nav_bar">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40sp"
+            android:textSize="30sp"
             android:textColor="#fff"
             android:textStyle="bold"
             android:text="Welcome to DocCure"
             android:fontFamily="cursive"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#fff"
-            android:fontFamily="cursive"
-            android:text="Thank You ! For being a part of Doccure.\n You can view the appointments booked."
-            android:textSize="30sp"
-            android:layout_marginTop="25dp"/>
+        <ImageButton
+            android:id="@+id/doc_sign_out"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/side_nav_bar"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/ic_more_vert_black_24dp"
+            android:onClick="showMenu"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -37,18 +40,19 @@
         android:background="@drawable/doc1"
         android:orientation="vertical">
 
-        <ImageView
+       <!-- <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/doc_image_button_background"
-            android:src="@drawable/doc4" />
+            android:src="@drawable/doc4" /> -->
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="5dp"
             android:gravity="center">
 
             <ImageButton
@@ -76,10 +80,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/buttonstylepink"
-            android:layout_margin="40dp"
+            android:layout_margin="30dp"
             android:text="See the Booked Appointments"
             android:drawableRight="@drawable/ic_send_black_24dp"
             android:textColor="#fff"/>
+        <ImageView
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:layout_gravity="center"
+            android:background="@drawable/doc_image_button_background"
+            android:src="@drawable/medicine4" />
+        <Button
+            android:id="@+id/doc_medicine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/appcolor"
+            android:layout_margin="20dp"
+            android:text="Check Medicine Here"
+            android:drawableRight="@drawable/ic_send_black_24dp"
+            android:textColor="#000"/>
 
     </LinearLayout>
 
