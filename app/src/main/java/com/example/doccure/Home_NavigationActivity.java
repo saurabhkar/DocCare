@@ -133,7 +133,9 @@ public class Home_NavigationActivity extends AppCompatActivity
             //Toast.makeText(this,"Funtionality is not added yet",Toast.LENGTH_SHORT).show();
 
         }
-        else if (id == R.id.nav_orders) {
+        else if (id == R.id.nav_medicine) {
+            Intent intent = new Intent(Home_NavigationActivity.this , MedicineActivity.class);
+            startActivity(intent);
             //Toast.makeText(this,"Funtionality is not added yet",Toast.LENGTH_SHORT).show();
 
         }
