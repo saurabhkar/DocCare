@@ -17,6 +17,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.support.v7.widget.Toolbar;
 import android.widget.AdapterView;
@@ -46,6 +47,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class appointmentBooking  extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
@@ -253,6 +255,11 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
         String time = inputtime.getSelectedItem().toString();
        // String time = inputtime.getText().toString();
 
+
+
+
+
+
         if(TextUtils.isEmpty(name))
         {
             Toast.makeText(this, "Please write your name", Toast.LENGTH_SHORT).show();
@@ -272,16 +279,47 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
         }
         else
         {
+            if(!(isValidPhone(phno))){
+                //  Toast.makeText(getApplicationContext(),"Phone number is valid",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Phone number is not valid",Toast.LENGTH_SHORT).show();
+            }
+                else{
             loadingBar.setTitle("Booking in Progress ");
             loadingBar.setMessage("Please wait ! ");
             loadingBar.setCanceledOnTouchOutside(false);
             loadingBar.show();
             WriteData(name,phno,dob,time,date);
         }
+        }
 
 
 
     }
+
+    private boolean isValidPhone(String phno) {
+
+        boolean check=false;
+        if(!Pattern.matches("[a-zA-Z]+", phno))
+        {
+            if(phno.length() < 10 || phno.length() > 10)
+            {
+                check = false;
+
+            }
+            else
+            {
+                check = true;
+
+            }
+        }
+        else
+        {
+            check=false;
+        }
+        return check;
+    }
+
+
 
     private void WriteData(final String name, final String phno, final String dob , final String time , final String date) {
 
