@@ -15,6 +15,7 @@ import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.doccure.DoctorService.MedicineListActivity;
 import com.example.doccure.R;
 import com.example.doccure.service.MainActivity;
 import com.example.doccure.service.ResetPasswordActivity;
@@ -28,7 +29,7 @@ public class DoctorsHomepage extends AppCompatActivity implements View.OnClickLi
     private TextView inputdateslot;
     private int mYear , mMonth , mDay;
     String dateslot ;
-    Button btnviewslots;
+    Button btnviewslots,doctor_med;
 
 
     @Override
@@ -36,7 +37,7 @@ public class DoctorsHomepage extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_homepage);
 
-
+doctor_med=(Button)findViewById(R.id.doc_medicine);
         docbtnsee = (ImageButton) findViewById(R.id.doc_slots_view);
         docbtnsee.setOnClickListener(this);
         inputdateslot = (TextView) findViewById(R.id.doc_date_slots);
@@ -47,6 +48,16 @@ public class DoctorsHomepage extends AppCompatActivity implements View.OnClickLi
             public void onClick(View v) {
                 viewAppointment();
                 Intent intent = new Intent(DoctorsHomepage.this , DoctorsAppointment.class);
+                intent.putExtra("slot_date",dateslot);
+
+                startActivity(intent);
+            }
+        });
+        doctor_med.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewAppointment();
+                Intent intent = new Intent(DoctorsHomepage.this , MedicineListActivity.class);
                 intent.putExtra("slot_date",dateslot);
 
                 startActivity(intent);

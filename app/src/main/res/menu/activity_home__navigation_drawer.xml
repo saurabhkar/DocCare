@@ -19,9 +19,9 @@
             android:icon="@drawable/ic_event_available_black_24dp"
             android:title="My Appointments" />
         <item
-            android:id="@+id/nav_orders"
+            android:id="@+id/nav_medicine"
             android:icon="@drawable/ic_reorder_black_24dp"
-            android:title="My Orders" />
+            android:title="Check Available Medicine" />
     </group>
     <item android:title="Other">
         <menu>
