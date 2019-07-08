@@ -102,21 +102,21 @@ public class Home_NavigationActivity extends AppCompatActivity
             Intent intent = new Intent(Home_NavigationActivity.this , AvailableSlotsActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.change_password) {
-            Toast.makeText(this, "This functionality has not been added yet. ", Toast.LENGTH_SHORT).show();
+        } //else if (id == R.id.change_password) {
+           // Toast.makeText(this, "This functionality has not been added yet. ", Toast.LENGTH_SHORT).show();
 
 
-        } else if (id == R.id.nav_myappointment) {
-            Toast.makeText(this, "This functionality has not been added yet. ", Toast.LENGTH_SHORT).show();
-        }
+        //} else if (id == R.id.nav_myappointment) {
+            //Toast.makeText(this, "This functionality has not been added yet. ", Toast.LENGTH_SHORT).show();
+        //}
         else if (id == R.id.nav_medicine) {
             Intent intent = new Intent(Home_NavigationActivity.this , MedicineActivity.class);
             startActivity(intent);
         }
-        else if (id == R.id.nav_refer) {
-            Toast.makeText(this, "This functionality has not been added yet. ", Toast.LENGTH_SHORT).show();
+     //   else if (id == R.id.nav_refer) {
+        //Toast.makeText(this, "This functionality has not been added yet. ", Toast.LENGTH_SHORT).show();
 
-        }
+        //}
         else if (id == R.id.nav_contact) {
             Toast.makeText(this, "This functionality has not been added yet. ", Toast.LENGTH_SHORT).show();
 
