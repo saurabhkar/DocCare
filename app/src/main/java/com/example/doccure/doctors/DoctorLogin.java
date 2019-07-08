@@ -98,6 +98,7 @@ public class DoctorLogin extends AppCompatActivity {
 
                             Intent intent = new Intent(DoctorLogin.this, DoctorsHomepage.class);
                             startActivity(intent);
+                            finish();
                         }
                     }
                 }
