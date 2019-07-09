@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.example.doccure.database.AvailableSlotsActivity;
 import com.example.doccure.database.MedicineActivity;
 import com.example.doccure.service.MainActivity;
+import com.example.doccure.slotbook.ContactUsActivity;
 import com.example.doccure.slotbook.appointmentBooking;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -119,7 +120,9 @@ public class Home_NavigationActivity extends AppCompatActivity
 
         //}
         else if (id == R.id.nav_contact) {
-            Toast.makeText(this, "This functionality has not been added yet. ", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "This functionality has not been added yet. ", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Home_NavigationActivity.this , ContactUsActivity.class);
+            startActivity(intent);
 
         }
         else if (id == R.id.nav_sign_out) {
