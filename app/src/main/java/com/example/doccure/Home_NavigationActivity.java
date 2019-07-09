@@ -39,6 +39,7 @@ public class Home_NavigationActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(Home_NavigationActivity.this , appointmentBooking.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -132,7 +133,7 @@ public class Home_NavigationActivity extends AppCompatActivity
 
     private boolean signout() {
         FirebaseAuth.getInstance().signOut();
-        finish();
+        //finish();
         startActivity(new Intent(this, MainActivity.class));
         finish();
         return true;

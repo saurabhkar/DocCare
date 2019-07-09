@@ -24,8 +24,9 @@
         <activity android:name=".service.ResetPasswordActivity" />
         <activity android:name=".service.JoinActivity" />
         <activity android:name=".service.MainActivity" />
-        <activity android:name=".service.FirstActivity"/>
-        <activity android:name=".slotbook.ContactUsActivity">
+        <activity android:name=".slotbook.ContactUsActivity"/>
+
+        <activity android:name=".service.FirstActivity">
 
         <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

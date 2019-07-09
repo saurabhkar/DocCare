@@ -349,6 +349,7 @@ public class appointmentBooking  extends AppCompatActivity implements AdapterVie
 
                                         Intent intent = new Intent(appointmentBooking.this, Home_NavigationActivity.class);
                                         startActivity(intent);
+                                        finish();
                                         notifications();
 
                                     }

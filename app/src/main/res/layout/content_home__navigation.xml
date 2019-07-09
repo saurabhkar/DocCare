@@ -95,12 +95,12 @@
         android:layout_marginTop="350dp"
         android:gravity="center|bottom"
         android:orientation="horizontal"
-        android:padding="@dimen/activity_vertical_margin">>
+        android:padding="@dimen/activity_vertical_margin">
     <ImageButton
         android:id="@+id/lab_test_image_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-android:layout_below="@+id/med_image_button"
+        android:layout_below="@+id/med_image_button"
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/doc_image_button_background"

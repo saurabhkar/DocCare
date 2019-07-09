@@ -87,11 +87,12 @@ android:layout_marginTop="150dp"
    </TableLayout>
     <ImageButton
         android:id="@+id/contact_mail"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="150dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="110dp"
         android:src="@drawable/gmail"
+        android:background="#ffff"
         />
 </LinearLayout>
 <!--<RelativeLayout mlns:android="http://schemas.android.com/apk/res/android"
