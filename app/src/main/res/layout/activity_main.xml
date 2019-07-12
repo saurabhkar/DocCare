@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:textSize="30sp"
             android:textColor="#fff"
-            android:text="Welcome to DocCure"/>
+            android:text="Welcome to DocCare"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

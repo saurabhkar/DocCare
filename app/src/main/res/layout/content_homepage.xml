@@ -20,7 +20,7 @@
             android:textSize="30sp"
             android:textColor="#fff"
             android:textStyle="bold"
-            android:text="Welcome to DocCure"
+            android:text="Welcome to DocCare"
             android:fontFamily="cursive"/>
         <TextView
             android:layout_width="wrap_content"

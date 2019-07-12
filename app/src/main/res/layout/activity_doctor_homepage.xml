@@ -20,7 +20,7 @@
             android:textStyle="bold"
             android:layout_weight="3"
             android:gravity="center"
-            android:text="Welcome to DocCure"
+            android:text="Welcome to DocCare"
             android:fontFamily="cursive"/>
         <ImageView
             android:id="@+id/doc_sign_out"
