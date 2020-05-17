@@ -1,4 +1,6 @@
 # DocCare
+2 contributors : <a href="https://github.com/saurabhkar"> Saurabh Kar </a>  <a href="https://github.com/arati-sharma"> Arati Sharma </a>
+ 
 <p><h1> A Medical Centre Management Application </h1></p>
 
 <p> <p><h3> Work completed : </h3><p>This is an android application designed to fulfill the needs of appointment booking and other medical services. </p>
