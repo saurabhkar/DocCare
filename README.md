@@ -1,5 +1,5 @@
 # DocCare
-2 contributors : <a href="https://github.com/saurabhkar"> Saurabh Kar </a> &nbsp&nbsp&nbsp&nbsp&nbsp <a href="https://github.com/arati-sharma"> Arati Sharma </a>
+2 contributors : <a href="https://github.com/saurabhkar"> Saurabh Kar </a> <t> </t> <a href="https://github.com/arati-sharma"> Arati Sharma </a>
  
 <p><h1> A Medical Centre Management Application </h1></p>
 
